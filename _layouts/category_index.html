@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<div id="results">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4><strong>{{ page.category | capitalize }}</strong></h4>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /results -->
+
+
+<div class="container margin_60_35">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-7">
+      {% for doctor in site.posts %} {% if doctor.categories contains page.category %}
+          <div class="strip_list wow fadeIn">
+            <figure>
+              <a href="detail-page.html"><img src="{{ doctor.img_url }}" alt=""></a>
+            </figure>
+            <h3>{{ doctor.name }}</h3>
+            <p>{{ doctor.description}}</p>
+            <p>
+              <b>Specialties:</b>
+              <p>{{ doctor.specialties | join: ', ' | captilize }}</p>
+            </p>
+            <ul>
+              <li><a href="tel://{{ doctor.phone }}">{{ doctor.phone }}</a></li>
+              <li><a target="_blank" href="https://maps.google.com/?q={{ doctor.address1 }}, {{ doctor.city }}, {{ doctor.state }}, {{ doctor.zipcode }}">{{ doctor.address1 }}, {{ doctor.city }}, {{ doctor.state }}, {{ doctor.zipcode }}</a></li>
+              <li><a href="{{ doctor.url }}">See More</a></li>
+            </ul>
+          </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>
