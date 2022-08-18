@@ -21,13 +21,18 @@ layout: default
       {% for doctor in site.posts %} {% if doctor.categories contains page.category %}
           <div class="strip_list wow fadeIn">
             <figure>
-              <a href="detail-page.html"><img src="{{ doctor.img_url }}" alt=""></a>
+              <a href="{{ doctor.url }}"><img src="{{ doctor.img_url }}" alt=""></a>
             </figure>
             <h3>{{ doctor.name }}</h3>
-            <p>{{ doctor.description}}</p>
-            <p>
+            <p>{{ doctor.intro | truncate: 210 }}</p>
+            <p style="display:inline;">
               <b>Specialties:</b>
-              <p>{{ doctor.specialties | join: ', ' | captilize }}</p>
+              {% for specialty in doctor.specialties limit: 6 %}
+                {{ specialty }}
+                {% if forloop.index == 6 %}
+                  . . .
+                {% endif %}
+              {% endfor %}
             </p>
             <ul>
               <li><a href="tel://{{ doctor.phone }}">{{ doctor.phone }}</a></li>

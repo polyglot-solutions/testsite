@@ -26,7 +26,7 @@ layout: default
         {% for doctor in cat[1] %}
   	      <div class="strip_list wow fadeIn">
   	        <figure>
-  	          <a href="detail-page.html"><img src="{{ doctor.image_url }}" alt=""></a>
+  	          <a href="{{ doctor.url }}"><img src="{{ doctor.image_url }}" alt=""></a>
   	        </figure>
   	        <h3>{{ doctor.name }}</h3>
   	        <p>{{ doctor.description}}</p>
