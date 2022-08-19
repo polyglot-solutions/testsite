@@ -8,7 +8,7 @@ layout: default
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h4><strong>Showing 10</strong> of results</h4>
+        <h4><strong>Select State or City</strong></h4>
       </div>
     </div>
     <!-- /row -->
@@ -16,45 +16,49 @@ layout: default
   <!-- /container -->
 </div>
 <!-- /results -->
-
-
 <div class="container margin_60_35">
-  <div class="row justify-content-md-center">
-    <div class="col-lg-7">
-      {% for cat in site.categories %}
-        {{ cat[0] }}
-        {% for doctor in cat[1] %}
-  	      <div class="strip_list wow fadeIn">
-  	        <figure>
-  	          <a href="{{ doctor.url }}"><img src="{{ doctor.image_url }}" alt=""></a>
-  	        </figure>
-  	        <h3>{{ doctor.name }}</h3>
-  	        <p>{{ doctor.description}}</p>
-            <p>
-              <b>Specialties:</b>
-              <p>{{ doctor.specialties | join: ', ' | captilize }}</p>
-            </p>
-  	        <ul>
-          	  <li><a href="tel://{{ doctor.telephone }}">{{ doctor.telephone }}</a></li>
-              <li><a target="_blank" href="https://maps.google.com/?q={{ doctor.address1 }}, {{ doctor.city }}, {{ doctor.state }}, {{ doctor.zipcode }}">{{ doctor.address1 }}, {{ doctor.city }}, {{ doctor.state }}, {{ doctor.zipcode }}</a></li>
-  	          <li><a href="{{ doctor.url }}">See More</a></li>
-  	        </ul>
-  	      </div>
-  	    {% endfor %}
-      {% endfor %}
-      <nav aria-label="" class="add_top_20">
-        <ul class="pagination pagination-sm">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-          </li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
+  <div class="row justify-content-center">
+    <div class="col-xl-4 col-lg-5 col-md-6">
+      <div class="list_home">
+        <div class="list_title">
+          <i class="icon_pin_alt"></i>
+          <h3>Search by City or Zone</h3>
+        </div>
+        <ul>
+          <li><a href="#0"><strong>23</strong>Albany</a></li>
+          <li><a href="#0"><strong>23</strong>Albuquerque</a></li>
+          <li><a href="#0"><strong>23</strong>Atlanta</a></li>
+          <li><a href="#0"><strong>23</strong>Baltimore</a></li>
+          <li><a href="#0"><strong>23</strong>Baton Rouge</a></li>
+          <li><a href="#0"><strong>23</strong>Birmingham</a></li>
+          <li><a href="#0"><strong>23</strong>Boston</a></li>
+          <li><a href="#0"><strong>23</strong>Buffalo</a></li>
+          <li><a href="#0"><strong>23</strong>Charleston</a></li>
+          <li><a href="#0">More...</a></li>
         </ul>
-      </nav>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-5 col-md-6">
+      <div class="list_home">
+        <div class="list_title">
+          <i class="icon_archive_alt"></i>
+          <h3>Search by type</h3>
+        </div>
+        <ul>
+          <li><a href="#0"><strong>23</strong>Allergist</a></li>
+          <li><a href="#0"><strong>23</strong>Cardiologist</a></li>
+          <li><a href="#0"><strong>23</strong>Chiropractor</a></li>
+          <li><a href="#0"><strong>23</strong>Dentist</a></li>
+          <li><a href="#0"><strong>23</strong>Dermatologist</a></li>
+          <li><a href="#0"><strong>23</strong>Gastroenterologist</a></li>
+          <li><a href="#0"><strong>23</strong>Ophthalmologist</a></li>
+          <li><a href="#0"><strong>23</strong>Optometrist</a></li>
+          <li><a href="#0"><strong>23</strong>Pediatrician</a></li>
+          <li><a href="#0">More....</a></li>
+        </ul>
+      </div>
     </div>
   </div>
+  <!-- /row -->
+</div>
 </div>

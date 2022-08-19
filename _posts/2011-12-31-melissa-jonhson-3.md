@@ -117,8 +117,8 @@ payment:
   - Patient Financing
 insurance: []
 google_maps_url: https://www.google.com/maps/?q=734+Longmeadow+St.+Suite+201+Longmeadow
-category: orlando
-layout: default
+categories: orlando
+layout: default florida
 ---
 
 <div id="breadcrumb">
