@@ -1,0 +1,115 @@
+---
+layout: default
+---
+
+<div id="breadcrumb">
+	<div class="container">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="/categories/{{ page.category }}">Categories</a></li>
+      <li><a href="/categories/{{ page.category }}">{{ page.category | capitalize }}</a></li>
+		</ul>
+	</div>
+</div>
+<div class="container margin_60">
+	<div class="row justify-content-md-center">
+		<div class="col-xl-8 col-lg-8">
+			<nav id="secondary_nav">
+				<div class="container" style="height:25px;">
+				</div>
+			</nav>
+			<div id="section_1">
+				<div class="box_general_3">
+					<div class="profile">
+						<div class="row">
+							<div class="col-lg-5 col-md-4">
+								<figure>
+									<img src="{{ page.img_url }}" alt="" class="img-fluid">
+								</figure>
+							</div>
+							<div class="col-lg-7 col-md-8">
+								<h1>{{ page.doctor_name }}</h1>
+								{% if page.website %}
+	                <ul class="statistic">
+	                  <a href="{{ page.website }}" target="_blank"><li>Website</li></a>
+	                </ul>
+	              {% endif %}
+								<ul class="contacts">
+									<li>
+										<h6>Address</h6>
+										<a target="_blank" href="{{ page.google_maps_url }}">
+										  {{ page.address1 }} {{ page.address2 }}, {{ page.city }}, {{ page.state }}, {{ page.zipcode }}
+										</a>
+									</li>
+									<li>
+										<h6>Phone</h6> <a href="tel://{{ page.phone }}">{{ page.phone }}</a>
+									</li>
+                  <li>
+                    <h6>Board Certification</h6>{{ page.board_certifications }}
+                  </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<hr>
+          <div class="indent_title_in">
+            <i class="pe-7s-user"></i>
+            <h3>Information</h3>
+          </div>
+          <div class="wrapper_indent">
+          	{% if page.intro %}
+						  <p>{{ page.intro }}</p>
+						{% endif %}
+            <p>{{ page.intro }}</p>
+            <h6>Specializations</h6>
+            <div class="row">
+              {% assign specialties_middle = page.specialties | size | divided_by: 2 %}
+              <div class="col-lg-6">
+                <ul class="bullets">
+                  {% for spectialy in page.specialties limit: specialties_middle %}
+                    <li>{{ spectialy }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul class="bullets">
+                  {% for spectialy in page.specialties offset: specialties_middle %}
+                    <li>{{ spectialy }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% if page.memberships || page.education %}
+						<hr>
+						<div class="indent_title_in">
+							<i class="pe-7s-news-paper"></i>
+							<h3>Education</h3>
+							<p>Mussum ipsum cacilds, vidis litro abertis.</p>
+						</div>
+						<div class="wrapper_indent">
+							{% if page.education %}
+								{% for edu in page.education %}
+							    <p style="margin-bottom:0px !important;">{{ edu }}</p>
+							  {% endfor %}
+							{% endif %}
+							<br>
+							<ul class="list_edu">
+			          {% if page.memberships %}
+									<h6>Memberships</h6>
+									<ul class="list_edu">
+										{% for membership in page.memberships %}
+										  <li><strong>{{ membership }}</strong></li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+							</ul>
+						</div>
+					{% endif %}
+				</div>
+				<!-- /section_1 -->
+			</div>
+		</div>
+	</div>
+	<!-- /row -->
+</div>

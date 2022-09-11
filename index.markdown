@@ -23,6 +23,7 @@ layout: default
         <div class="list_title">
           <i class="icon_pin_alt"></i>
           <h3>Search by City or Zone</h3>
+          {{ site.categories }}
         </div>
         <ul>
           <li><a href="#0"><strong>23</strong>Albany</a></li>
