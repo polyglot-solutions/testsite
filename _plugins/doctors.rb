@@ -13,7 +13,7 @@ module Jekyll
           next if doctor['state'].count("/\A[a-zA-Z]*\z/") != 2
           categories = [doctor['city'], doctor['state'], doctor['zipcode']]
           formatted_name = doctor['name'].gsub(/\s+/, '-').downcase
-          file_name = "#{formatted_name}-#{rand(1..10).to_s}.html"
+          file_name = "#{formatted_name}.html"
           file_dir1 = "#{doctor['state']&.gsub(/\s+/, "")&.upcase}/#{doctor['city'].gsub(/\s+/, "")}"
           site.pages << DoctorPage.new(site, site.source, File.join(file_dir1, ''), doctor, file_name)
         end
